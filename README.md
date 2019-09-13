@@ -17,6 +17,23 @@ All variables that can be added to files like `bblayers.conf` or `local.conf` or
 | __Add__ `gcc`                 | `local.conf` | `EXTRA_IMAGE_FEATURES ?= "tools-sdk"`                                                      |
 | __Add__ `dropbear-ssh-server` | `local.conf` | `EXTRA_IMAGE_FEATURES ?= "ssh-server-dropbear"`                                            |
 | __Add__ `virtualization`      | `local.conf` | `DISTRO_FEATURES_append = " virtualization"`                                               |
+| Persistent Bitbake server     | `local.conf` | `BB_SERVER_TIMEOUT= "n" # n in seconds`                                                    |
+| __Remove__ build packages     | `local.conf` | `INHERIT += "rm_work"`                                                                     |
+| Exclude packages from cleaning| `local.conf` | `RM_WORK_EXCLUDE += "recipe_name"`                                                         |
+| Avoid `-dbg` packages         | `local.conf` | `INHIBIT_PACKAGE_DEBUG_SPLIT = "1"`                                                        |
+| Accept FSL's EULA license     | `local.conf` | `ACCEPT_FSL_EULA = "1"`                                                                    |
+| Download Directory            | `local.conf` | `DL_DIR ?= "${BSP_DIR}/downloads/"`                                                        |
+| Configuring a Pre-mirror      | `local.conf` | `INHERIT += "own-mirrors"` <br> `SOURCE_MIRROR_URL = "http://example.com/source-mirror"`   |
+| *tarballs* of git repos.      | `local.conf` | `BB_GENERATE_MIRROR_TARBALLS = "1"`                                                        |
+| Build using Pre-mirrors only  | `local.conf` | `BB_FETCH_PREMIRRORONLY = "1"`                                                             |
+| _Add_ Package Mgmt. System    | `local.conf` | `EXTRA_IMAGE_FEATURES += "package-management"`                                             |
+| Simple `PR` server            | `local.conf` | `PRSERV_HOST = "<server_ip>:<port>"`                                                       |
+| Enable build history          | `local.conf` | `INHERIT += "buildhistory"`                                                                |
+| Store build history in repo.  | `local.conf` | `BUILDHISTORY_COMMIT = "1"`                                                                |
+| Track image, pkg, SDKs change | `local.conf` | `BUILDHISTORY_FEATURES = "image" # package or sdk`                                         |
+| Track a file for buildhistory | `local.conf` | `BUILDHISTORY_IMAGE_FILES += "/path/to/file"`                                              |
+| Terminal for `dev(py)shell`   | `local.conf` | `OE_TERMINAL = "screen"`                                                                   |
+| Submit Failed build error     | `local.conf` | `INHERIT += "report-error"`                                                                |
 
 ## Commands
 
@@ -26,13 +43,36 @@ All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within 
 |:------------------------------|----------------------------------------------------------------------------------|
 | __Populate Classic SDK__      |   `bitbake -c populate_sdk <IMAGE_NAME>`                                         |
 | __Populate Extensible SDK__   |   `bitbake -c populate_sdk_ext <IMAGE_NAME>`                                     |
+| __Start build from scratch__  |   `cd $BUILD_DIR && rm -Rf tmp sstate-cache`                                     |
+| __Supported HW Boards__       |   `ls sources/meta-<hardware>*/recipes*/conf/machine/*.conf`                     |
+| __Supported Images__          |   `ls sources/meta-<hardware>*/recipes*/images/*.bb`                             |
+| __Single PR Server instance__ |   `bitbake-prserv --host <server_ip> --port <port> --start`                      |
+| __Find a package in a layer__ |   `cd sources && find --name "*busybox*"`                                        |
+| __Find a recipe in a layer__  |   `cd sources && find --name "*busybox*.bb*"`                                    |
+| __Search recipe__             |   `bitbake-layers show-recipes "gdb*"`                                           |
+| __Find dependency cache__     |   `devtool search <RegEx>`                                                       |
+| __Dump global env & find__    |   `bitbake -e | grep -w DISTRO_FEATURES`                                         |
+| __Locate source directory__   |   `bitbake -e <recipe> | grep ^S=`                                               |
+| __Locate working directory__  |   `bitbake -e <recipe> | grep ^WORKDIR=`                                         |
+| `devshell`                    |   `bitbake -c devshell <target>`                                                 |
+| `devpyshell`                  |   `bitbake -c devpyshell <target>`                                               |
+| __List tasks for a recipe__   |   `bitbake -c listtasks <target>`                                                |
+| __Force a build__             |   `bitbake -f <target>`                                                          |
+| __Force-run a specific task__ |   `bitbake -c compile -f <target>`                                               |
+| __Current/given pkg version__ |   `bitbake --show-versions`                                                      |
+| __Verbose output__            |   `bitbake -v <target>`                                                          |
+| __Display debug information__ |   `bitbake -DDD <target>`                                                        |
+| __Send error report__         |   `send-error-report ${LOG_DIR}/error-report/error-report_${TSTAMP}`             |
 
 ## Misc.
 
 All miscellaneous resources once can find for understanding the Yocto Project and working with it.
 
-### Documentation
+### Documentation / Websites
 
+* [`repo` Command Reference](https://source.android.com/setup/develop/repo)
+* [OpenEmbedded Layers Index](http://layers.openembedded.org)
+* [OpenEmbedded Errors Index](http://errors.openembedded.org)
 
 ### Repositories
 
