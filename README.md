@@ -34,6 +34,8 @@ All variables that can be added to files like `bblayers.conf` or `local.conf` or
 | Track a file for buildhistory | `local.conf` | `BUILDHISTORY_IMAGE_FILES += "/path/to/file"`                                              |
 | Terminal for `dev(py)shell`   | `local.conf` | `OE_TERMINAL = "screen"`                                                                   |
 | Submit Failed build error     | `local.conf` | `INHERIT += "report-error"`                                                                |
+| Number of parallel tasks      | `local.conf` | `BB_NUMBER_THREADS ?= "${@oe.utils.cpu_count()}"`                                          |
+| Value of `-j` in `make`       | `local.conf` | `PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"`                                           |
 
 ## Commands
 
