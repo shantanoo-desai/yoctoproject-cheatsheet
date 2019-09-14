@@ -53,9 +53,9 @@ All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within 
 | __Find a recipe in a layer__  |   `cd sources && find --name "*busybox*.bb*"`                                    |
 | __Search recipe__             |   `bitbake-layers show-recipes "gdb*"`                                           |
 | __Find dependency cache__     |   `devtool search <RegEx>`                                                       |
-| __Dump global env & find__    |   `bitbake -e | grep -w DISTRO_FEATURES`                                         |
-| __Locate source directory__   |   `bitbake -e <recipe> | grep ^S=`                                               |
-| __Locate working directory__  |   `bitbake -e <recipe> | grep ^WORKDIR=`                                         |
+| __Dump global env & find__    |   `bitbake -e`<code>&#124;</code>`grep -w DISTRO_FEATURES`                       |
+| __Locate source directory__   |   `bitbake -e <recipe>`<code>&#124;</code>`grep ^S=`                             |
+| __Locate working directory__  |   `bitbake -e <recipe>`<code>&#124;</code>`grep ^WORKDIR=`                       |
 | `devshell`                    |   `bitbake -c devshell <target>`                                                 |
 | `devpyshell`                  |   `bitbake -c devpyshell <target>`                                               |
 | __List tasks for a recipe__   |   `bitbake -c listtasks <target>`                                                |
