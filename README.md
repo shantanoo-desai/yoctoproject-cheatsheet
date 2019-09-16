@@ -36,6 +36,7 @@ All variables that can be added to files like `bblayers.conf` or `local.conf` or
 | Submit Failed build error     | `local.conf` | `INHERIT += "report-error"`                                                                |
 | Number of parallel tasks      | `local.conf` | `BB_NUMBER_THREADS ?= "${@oe.utils.cpu_count()}"`                                          |
 | Value of `-j` in `make`       | `local.conf` | `PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"`                                           |
+| Add Real-Time Kernel          | `local.conf` | `PREFERRED_PROVIDER_virtual/kernel = "<RT_Kernel_Image_name_from_Meta-Layer>"`             |
 
 ## Commands
 
