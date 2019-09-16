@@ -4,7 +4,40 @@ A summary of all things one might need to work with [Yocto Project](https://yoct
 One stop repository for Yocto since there are so many variables and CLIs to work with.
 
 
+## Commands
+
+All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within common Yocto Project development
+
+| Purpose                       | Command(s)                                                                       |
+|:------------------------------|----------------------------------------------------------------------------------|
+| __Populate Classic SDK__      |   `bitbake -c populate_sdk <IMAGE_NAME>`                                         |
+| __Populate Extensible SDK__   |   `bitbake -c populate_sdk_ext <IMAGE_NAME>`                                     |
+| __Start build from scratch__  |   `cd $BUILD_DIR && rm -Rf tmp sstate-cache`                                     |
+| __Supported HW Boards__       |   `ls sources/meta-<hardware>*/recipes*/conf/machine/*.conf`                     |
+| __Supported Images__          |   `ls sources/meta-<hardware>*/recipes*/images/*.bb`                             |
+| __Single PR Server instance__ |   `bitbake-prserv --host <server_ip> --port <port> --start`                      |
+| __Find a package in a layer__ |   `cd sources && find --name "*busybox*"`                                        |
+| __Find a recipe in a layer__  |   `cd sources && find --name "*busybox*.bb*"`                                    |
+| __Search recipe__             |   `bitbake-layers show-recipes "gdb*"`                                           |
+| __Find dependency cache__     |   `devtool search <RegEx>`                                                       |
+| __Dump global env & find__    |   `bitbake -e`<code>&#124;</code>`grep -w DISTRO_FEATURES`                       |
+| __Locate source directory__   |   `bitbake -e <recipe>`<code>&#124;</code>`grep ^S=`                             |
+| __Locate working directory__  |   `bitbake -e <recipe>`<code>&#124;</code>`grep ^WORKDIR=`                       |
+| `devshell`                    |   `bitbake -c devshell <target>`                                                 |
+| `devpyshell`                  |   `bitbake -c devpyshell <target>`                                               |
+| __List tasks for a recipe__   |   `bitbake -c listtasks <target>`                                                |
+| __Force a build__             |   `bitbake -f <target>`                                                          |
+| __Force-run a specific task__ |   `bitbake -c compile -f <target>`                                               |
+| __Current/given pkg version__ |   `bitbake --show-versions`                                                      |
+| __Verbose output__            |   `bitbake -v <target>`                                                          |
+| __Display debug information__ |   `bitbake -DDD <target>`                                                        |
+| __Send error report__         |   `send-error-report ${LOG_DIR}/error-report/error-report_${TSTAMP}`             |
+
+
 ## Configuration
+
+> NOTE: This section is a WIP and under consideration from the Yocto Project members for Improvements.
+> Until Further Updated this Section will not be changed.
 
 All variables that can be added to files like `bblayers.conf` or `local.conf` or other configuration files in Yocto.
 
@@ -38,34 +71,6 @@ All variables that can be added to files like `bblayers.conf` or `local.conf` or
 | Value of `-j` in `make`       | `local.conf` | `PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"`                                           |
 | Add Real-Time Kernel          | `local.conf` | `PREFERRED_PROVIDER_virtual/kernel = "<RT_Kernel_Image_name_from_Meta-Layer>"`             |
 
-## Commands
-
-All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within common Yocto Project development
-
-| Purpose                       | Command(s)                                                                       |
-|:------------------------------|----------------------------------------------------------------------------------|
-| __Populate Classic SDK__      |   `bitbake -c populate_sdk <IMAGE_NAME>`                                         |
-| __Populate Extensible SDK__   |   `bitbake -c populate_sdk_ext <IMAGE_NAME>`                                     |
-| __Start build from scratch__  |   `cd $BUILD_DIR && rm -Rf tmp sstate-cache`                                     |
-| __Supported HW Boards__       |   `ls sources/meta-<hardware>*/recipes*/conf/machine/*.conf`                     |
-| __Supported Images__          |   `ls sources/meta-<hardware>*/recipes*/images/*.bb`                             |
-| __Single PR Server instance__ |   `bitbake-prserv --host <server_ip> --port <port> --start`                      |
-| __Find a package in a layer__ |   `cd sources && find --name "*busybox*"`                                        |
-| __Find a recipe in a layer__  |   `cd sources && find --name "*busybox*.bb*"`                                    |
-| __Search recipe__             |   `bitbake-layers show-recipes "gdb*"`                                           |
-| __Find dependency cache__     |   `devtool search <RegEx>`                                                       |
-| __Dump global env & find__    |   `bitbake -e`<code>&#124;</code>`grep -w DISTRO_FEATURES`                       |
-| __Locate source directory__   |   `bitbake -e <recipe>`<code>&#124;</code>`grep ^S=`                             |
-| __Locate working directory__  |   `bitbake -e <recipe>`<code>&#124;</code>`grep ^WORKDIR=`                       |
-| `devshell`                    |   `bitbake -c devshell <target>`                                                 |
-| `devpyshell`                  |   `bitbake -c devpyshell <target>`                                               |
-| __List tasks for a recipe__   |   `bitbake -c listtasks <target>`                                                |
-| __Force a build__             |   `bitbake -f <target>`                                                          |
-| __Force-run a specific task__ |   `bitbake -c compile -f <target>`                                               |
-| __Current/given pkg version__ |   `bitbake --show-versions`                                                      |
-| __Verbose output__            |   `bitbake -v <target>`                                                          |
-| __Display debug information__ |   `bitbake -DDD <target>`                                                        |
-| __Send error report__         |   `send-error-report ${LOG_DIR}/error-report/error-report_${TSTAMP}`             |
 
 ## Misc.
 
