@@ -32,6 +32,18 @@ All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within 
 | __Verbose output__            |   `bitbake -v <target>`                                                          |
 | __Display debug information__ |   `bitbake -DDD <target>`                                                        |
 | __Send error report__         |   `send-error-report ${LOG_DIR}/error-report/error-report_${TSTAMP}`             |
+| __Create a new layer__        |   `yocto-layer create <layer_name>`                                              |
+| __Add custom layer__          |   `bitbake-layers add-layer /path/to/your_meta-layer`                            |
+| __Remove custom layer__       |   `bitbake-layers remove-layer /path/to/your_meta-layer`                         |
+| __Find all recipe layers__    |   `bitbake-layers show-recipes`                                                  |
+| __Find all clashing recipe__  |   `bitbake-layers show-overlayed`                                                |
+| __Show all `bbappend` files__ |   `bitbake-layers show-appends`                                                  |
+| __Flatten all Layers__        |   `bitbake-layers flatten <output_dir>`                                          |
+| __Show recipe cross-depends__ |   `bitbake-layers show-cross-depends`                                            |
+| __List layer dependencies from OE Index__ |   `bitbake-layers layerindex-show-depends <layer_name>               |
+| __Fetch & add layer using OE Index__      |   `bitbake-layers layerindex-fetch <layer name>`                     |
+
+
 
 
 ## Configuration
