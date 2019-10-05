@@ -40,7 +40,7 @@ All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within 
 | __Show all `bbappend` files__ |   `bitbake-layers show-appends`                                                  |
 | __Flatten all Layers__        |   `bitbake-layers flatten <output_dir>`                                          |
 | __Show recipe cross-depends__ |   `bitbake-layers show-cross-depends`                                            |
-| __List layer dependencies from OE Index__ |   `bitbake-layers layerindex-show-depends <layer_name>               |
+| __List layer dependencies from OE Index__ |   `bitbake-layers layerindex-show-depends <layer_name>`              |
 | __Fetch & add layer using OE Index__      |   `bitbake-layers layerindex-fetch <layer name>`                     |
 
 
