@@ -3,6 +3,11 @@
 A summary of all things one might need to work with [Yocto Project](https://yoctoproject.org).
 One stop repository for Yocto since there are so many variables and CLIs to work with.
 
+## Contributing
+
+Please feel free to add / adapt the list accordingly via PRs. As OE/Yocto Project still has a steep learning-curve,
+a better way would be to share resources with the community.
+
 ## Commands
 
 All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within common Yocto Project development
