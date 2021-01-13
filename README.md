@@ -3,7 +3,6 @@
 A summary of all things one might need to work with [Yocto Project](https://yoctoproject.org).
 One stop repository for Yocto since there are so many variables and CLIs to work with.
 
-
 ## Commands
 
 All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within common Yocto Project development
@@ -47,9 +46,6 @@ All hints for CLIs like `bitbake`, `bitbake-layers`, `devtool` etc. used within 
 
 
 ## Configuration
-
-> NOTE: This section is a WIP and under consideration from the Yocto Project members for Improvements.
-> Until Further Updated this Section will not be changed.
 
 All variables that can be added to files like `bblayers.conf` or `local.conf` or other configuration files in Yocto.
 
@@ -114,3 +110,4 @@ All miscellaneous resources once can find for understanding the Yocto Project an
 
 * [Yocto Project YouTube Channel](https://www.youtube.com/user/TheYoctoProject)
 * [Live Coding with Yocto Project Playlist](https://www.youtube.com/playlist?list=PLD4M5FoHz-TxMfBFrDKfIS_GLY25Qsfyj)
+* [Paul Barker's YouTube Channel/ Rust with Yocto Project](https://www.youtube.com/channel/UCvnVQTiuS9-1dxZI-SJGBRA)
