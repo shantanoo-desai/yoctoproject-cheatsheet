@@ -109,6 +109,8 @@ All miscellaneous resources once can find for understanding the Yocto Project an
     - [Yocto part IV – going on a diet](http://www.thelins.se/johan/blog/2014/06/yocto-part-iv-going-on-a-diet/)
 * Blog by Khem Raj (@kraj)
     - [Bake 64-bit Raspberry Pi 3 images with Yocto, Openembedded](https://himvis.com/bake-64-bit-raspberrypi3-images-with-yoctoopenembedded/)
+* Blog by Esa Jaaskela (@ejaaskel)
+    - [Yocto Hardening Series](https://ejaaskel.dev/yocto-hardening/)
 
 
 ### Videos
