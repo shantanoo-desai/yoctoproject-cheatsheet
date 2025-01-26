@@ -93,7 +93,6 @@ All miscellaneous resources once can find for understanding the Yocto Project an
 
 * [`repo` Command Reference](https://source.android.com/setup/develop/repo)
 * [OpenEmbedded Layers Index](http://layers.openembedded.org)
-* [OpenEmbedded Errors Index](http://errors.openembedded.org)
 
 ### Repositories
 
