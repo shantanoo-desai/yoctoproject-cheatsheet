@@ -112,9 +112,9 @@ All miscellaneous resources once can find for understanding the Yocto Project an
 * Blog by Esa Jaaskela (@ejaaskel)
     - [Yocto Hardening Series](https://ejaaskel.dev/yocto-hardening/)
 
-
 ### Videos
 
 * [Yocto Project YouTube Channel](https://www.youtube.com/user/TheYoctoProject)
 * [Live Coding with Yocto Project Playlist](https://www.youtube.com/playlist?list=PLD4M5FoHz-TxMfBFrDKfIS_GLY25Qsfyj)
 * [Paul Barker's YouTube Channel/ Rust with Yocto Project](https://www.youtube.com/channel/UCvnVQTiuS9-1dxZI-SJGBRA)
+* [Leon Anavi's YouTube Channel / Yocto Project & Raspberry Pi 5](https://www.youtube.com/playlist?list=PLRsiDZNEIs_T-AjQROqpwlzdLoJCkRab7)
